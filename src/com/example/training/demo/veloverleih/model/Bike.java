@@ -1,6 +1,6 @@
 package com.example.training.demo.veloverleih.model;
 
-public class Bike {
+public class Bike implements BikeInterface {
 	private String id;
 	private String type;
 	private int gears;
@@ -9,10 +9,9 @@ public class Bike {
 	private double baseRate;
 	private String brand;
 	private String color;
-	
+
 	public Bike(String id, String type, int gears, String propulsion, double hourlyRate, double baseRate, String brand,
 			String color) {
-		super();
 		this.id = id;
 		this.type = type;
 		this.gears = gears;
@@ -23,55 +22,79 @@ public class Bike {
 		this.color = color;
 	}
 	
+	public Bike() {
+		
+	}
+	
+	public Bike(double baseRate) {
+		this.baseRate = baseRate;
+	}
+
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getTyp() {
+
+	public String getType() {
 		return type;
 	}
-	public void setTyp(String typ) {
-		this.type = typ;
+
+	public void setType(String type) {
+		this.type = type;
 	}
-	public double getGaenge() {
+
+	public int getGears() {
 		return gears;
 	}
-	public void setGaenge(int gaenge) {
-		this.gears = gaenge;
+
+	public void setGears(int gears) {
+		this.gears = gears;
 	}
-	public String getAntrieb() {
+
+	public String getPropulsion() {
 		return propulsion;
 	}
-	public void setAntrieb(String antrieb) {
-		this.propulsion = antrieb;
+
+	public void setPropulsion(String propulsion) {
+		this.propulsion = propulsion;
 	}
-	public double getPreisProStunde() {
+
+	public double getHourlyRate() {
 		return hourlyRate;
 	}
-	public void setPreisProStunde(double preisProStunde) {
-		this.hourlyRate = preisProStunde;
+
+	public void setHourlyRate(double hourlyRate) {
+		this.hourlyRate = hourlyRate;
 	}
-	public double getGrundTaxe() {
+
+	public double getBaseRate() {
 		return baseRate;
 	}
-	public void setGrundTaxe(double grundTaxe) {
-		this.baseRate = grundTaxe;
+
+	public void setBaseRate(double baseRate) {
+		this.baseRate = baseRate;
 	}
-	public String getMarke() {
+
+	public String getBrand() {
 		return brand;
 	}
-	public void setMarke(String marke) {
-		this.brand = marke;
+
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
-	public String getFarbe() {
+
+	public String getColor() {
 		return color;
 	}
-	public void setFarbe(String farbe) {
-		this.color = farbe;
+
+	public void setColor(String color) {
+		this.color = color;
 	}
-	
+
 	
 
 }

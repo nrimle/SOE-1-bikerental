@@ -2,23 +2,20 @@ package com.example.training.demo.veloverleih.model;
 
 import java.util.ArrayList;
 
-public class Customer extends Person {
-	
-	private String id;
+public class Customer extends AbstractPerson {
+
 	private String customerNumber;
 	private ArrayList<Rental> rentals;
-	
-	public Customer(String id, String fistName, String lastName, String street, String buildingNumber, int zipCode) {
+
+	public Customer(String id, String fistName, String lastName, String street, String buildingNumber, int zipCode,
+			String customerNumber, ArrayList<Rental> rentals) {
 		super(id, fistName, lastName, street, buildingNumber, zipCode);
-		// TODO Auto-generated constructor stub
+		this.customerNumber = customerNumber;
+		this.rentals = rentals;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+	
+	public Customer() {
+		super();
 	}
 
 	public String getCustomerNumber() {
@@ -38,8 +35,10 @@ public class Customer extends Person {
 	}
 
 	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", customerNumber=" + customerNumber + ", rentals=" + rentals + "]";
+	public void sendLetter() {
+		System.out.println("Sending letter to Customer");
 	}
-
+	public void create() {
+		System.out.println("Creating customer");
+	}
 }

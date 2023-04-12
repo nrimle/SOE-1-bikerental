@@ -1,22 +1,19 @@
 package com.example.training.demo.veloverleih.model;
 
-public class Employee extends Person {
-	
-	private String id;
+public class Employee extends AbstractPerson {
+
 	private String employeeNumber;
 	private double salary;
 
-	public Employee(String id, String fistName, String lastName, String street, String buildingNumber, int zipCode) {
+	public Employee(String id, String fistName, String lastName, String street, String buildingNumber, int zipCode,
+			String employeeNumber, double salary) {
 		super(id, fistName, lastName, street, buildingNumber, zipCode);
-		// TODO Auto-generated constructor stub
+		this.employeeNumber = employeeNumber;
+		this.salary = salary;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+	
+	public Employee() {
+		super();
 	}
 
 	public String getEmployeeNumber() {
@@ -35,6 +32,11 @@ public class Employee extends Person {
 		this.salary = salary;
 	}
 
-	
-
+	@Override
+	public void sendLetter() {
+		System.out.println("Sending letter to Employee");
+	}
+	public void create() {
+		System.out.println("Creating employee");
+	}
 }
